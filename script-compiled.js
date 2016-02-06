@@ -17,12 +17,17 @@ function Person() {
 }
 
 Person.prototype.toString = function () {
+  // CONST VARIABLE TYPE
+  const INSTITUTE = 'ISEP';
+
   // Template String
-  console.log(`${ this.name }, age ${ this.age } from ${ this.country }.`);
+  console.log(`${ this.name }, age ${ this.age } from ${ this.country }.
+    Studying at ${ INSTITUTE }`);
 };
 
 // Arrow function
 let createPersonAndPrint = (name, age, country) => {
+  // LET VARIABLE TYPE
   let instance = new Person(name, { age: age, country: country });
   instance.toString();
 };
