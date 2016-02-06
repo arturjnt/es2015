@@ -28,8 +28,9 @@ createPersonAndPrint('Sr. Carreira', 32);
 
 // Rest params
 function iterateArray(...iteratable) {
-  for (let element in iteratable) {
-    console.log(iteratable[element]);
+  // For ... of
+  for (let element of iteratable) {
+    console.log(element);
   }
 }
 
@@ -62,3 +63,43 @@ function Someone() {
 
 let thisGuy = new Someone();
 thisGuy.printDiet();
+
+// Merging properties with Object.assign
+function styleMerger(options = {}) {
+  const defaults = {
+    display:  'inline-block',
+    padding:  '15px',
+    top:      'unset'
+  };
+
+  let finalStyle = Object.assign({}, defaults, options);
+
+  console.log(finalStyle);
+}
+
+styleMerger({padding: '59px'});
+
+// Array destructuring
+let [first, , ...rest] = ['start', 'curve', 'straight', 'curve', 'finish'];
+console.log(`First: ${first} | Rest: ${rest}`);
+
+// Array.find
+let users = [
+  {name: 'John', admin: false},
+  {name: 'Jane', admin: true},
+  {name: 'Jim', admin: true}
+];
+
+let admin = users.find(user => user.admin);
+
+console.log(admin);
+
+// Maps
+let mapSettings = new Map();
+mapSettings.set('user', 'John');
+mapSettings.set('second', 'image');
+mapSettings.set('last', ['array0', 'array1']);
+
+for (let [key, value] of mapSettings) {
+  console.log(`${key} - ${value}`);
+}
