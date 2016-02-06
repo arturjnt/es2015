@@ -1,0 +1,3 @@
+#!/bin/bash
+nohup babel script.js --watch --out-file script-compiled.js &
+nodemon script-compiled.js
