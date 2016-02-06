@@ -48,3 +48,17 @@ spreadParams(...xyz);
 // Object initializer shorthand
 let shorty = {x, y, z};
 console.log(`x: ${shorty.x} | y: ${shorty.y} | z: ${shorty.z}`);
+
+// Method initializer shorthand
+function Someone() {
+  const DIET = 'Vegan';
+
+  return {
+    printDiet() {
+      console.log(`Diet for Someone is ${DIET}`);
+    }
+  };
+}
+
+let thisGuy = new Someone();
+thisGuy.printDiet();
