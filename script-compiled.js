@@ -129,3 +129,16 @@ for (let _ref3 of mapSettings) {
 
   console.log(`${ key } - ${ value }`);
 }
+
+// Sets
+let tags = new Set();
+
+tags.add('JavaScript');
+tags.add('Programming');
+tags.add('Web');
+
+for (let tag of tags) {
+  console.log(`Tag: ${ tag }`);
+}
+
+console.log(tags.has('Web'));
